@@ -1,0 +1,9 @@
+# Arquivo de configuração de ambiente
+# Copie este arquivo para .env e adicione suas chaves
+
+# Chave da OpenAI (obrigatória)
+OPENAI_API_KEY=sk-your-openai-key-here
+
+# Configurações do servidor (opcional)
+PORT=8000
+HOST=0.0.0.0
