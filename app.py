@@ -14,7 +14,6 @@ print("=== Sistema de Renegociação de Dívidas ===")
 print("Iniciando aplicação com AgentOS...")
 
 agent_os = criar_aplicacao_agno()
-print(f"✓ Agentes configurados: {[agent.name for agent in agent_os.agents]}")
 print("✓ Endpoints automáticos criados pelo Agno")
 
 # Obter a app FastAPI

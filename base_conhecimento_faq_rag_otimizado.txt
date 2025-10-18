@@ -1,0 +1,398 @@
+Pergunta: O que é considerado uma dívida bancária?
+Resposta: Qualquer valor devido a bancos ou fintechs por uso de crédito (cartão, empréstimos, financiamentos, cheque especial, rotativo, renegociações e tarifas vinculadas), vencido ou a vencer.
+
+---
+Pergunta: Quais são os produtos financeiros que mais geram endividamento?
+Resposta: Cartão de crédito (rotativo e parcelamento de fatura), cheque especial, empréstimo pessoal, consignado, financiamento de veículo e imobiliário, além de CDC e antecipações.
+
+---
+Pergunta: O que é CET (Custo Efetivo Total)?
+Resposta: É o indicador que soma juros, tarifas, seguros e tributos do crédito, permitindo comparar ofertas entre instituições de forma justa.
+
+---
+Pergunta: O que é crédito rotativo do cartão?
+Resposta: É o financiamento do saldo não pago da fatura; tem uma das maiores taxas do mercado. A partir do mês seguinte, o banco deve oferecer parcelamento com custo menor que o rotativo.
+
+---
+Pergunta: Qual a diferença entre refinanciamento, renegociação e portabilidade?
+Resposta: Renegociação reestrutura prazos e juros no mesmo banco; refinanciamento troca a dívida atual por uma nova com condições diferentes; portabilidade transfere sua dívida para outra instituição com CET inferior.
+
+---
+Pergunta: Por que a minha dívida cresce tão rápido?
+Resposta: Por juros compostos, multas e encargos por atraso, além de seguros e tarifas em alguns contratos; controlar o CET e interromper o rotativo reduz o efeito bola de neve.
+
+---
+Pergunta: O que é amortização?
+Resposta: É o pagamento do principal da dívida; sistemas como SAC e PRICE definem como o principal e os juros são distribuídos nas parcelas.
+
+---
+Pergunta: Como descubro o valor real que devo hoje?
+Resposta: Com extrato atualizado do banco contendo saldo devedor, encargos, juros do período, multas e eventuais seguros; solicitamos e conferimos os cálculos antes de propor acordo.
+
+---
+Pergunta: É possível juntar várias dívidas em uma só parcela?
+Resposta: Sim, via consolidação ou portabilidade múltipla, desde que o CET consolidado seja competitivo e caiba no seu orçamento.
+
+---
+Pergunta: O que é “novação” de dívida?
+Resposta: É a criação de uma nova obrigação que substitui a anterior, formalizando novos prazos e taxas; exige análise de custo-benefício.
+
+---
+Pergunta: O banco pode negativar sem avisar?
+Resposta: Não; é exigido aviso prévio com prazo razoável e identificação do débito; guarde todas as comunicações.
+
+---
+Pergunta: Como saber se os juros são abusivos?
+Resposta: Comparamos as taxas do contrato com as médias de mercado e analisamos cláusulas; indícios incluem CET muito acima da média, juros no rotativo por longos períodos e cobranças não contratadas.
+
+---
+Pergunta: Posso pedir revisão de contrato?
+Resposta: Sim; a revisão pode ocorrer administrativamente, por mediação/Procons ou judicialmente; antes, avaliamos chances, provas e custo-benefício.
+
+---
+Pergunta: O que fazer se cobraram serviço/seguro não contratado?
+Resposta: Solicitar estorno e cancelamento imediato; se houver resistência, registramos reclamação oficial, pedimos devolução em dobro quando cabível e preservamos evidências.
+
+---
+Pergunta: Cobrança abusiva por telefone é ilegal?
+Resposta: Sim; você pode exigir horários e formas de contato adequadas; se persistir, registre protocolo e formalize reclamação.
+
+---
+Pergunta: Tenho direito ao contrato e planilha de evolução?
+Resposta: Sim; você pode requerer o contrato, CET, extratos, memória de cálculo e gravações de voz quando aplicáveis.
+
+---
+Pergunta: Em quanto tempo meu nome deve ser limpo após pagamento?
+Resposta: Em geral até 5 dias úteis após a quitação ou pagamento da primeira parcela do acordo, conforme política do credor.
+
+---
+Pergunta: Posso discutir a inclusão indevida do meu nome?
+Resposta: Sim; solicitamos retirada, reparação e, se cabível, indenização por danos.
+
+---
+Pergunta: Dívidas prescrevem?
+Resposta: A cobrança judicial prescreve conforme o tipo de contrato; porém, a cobrança extrajudicial e a negociação podem continuar; a negativação em bureaus costuma cair após 5 anos.
+
+---
+Pergunta: Posso desistir de um contrato recém-assinado?
+Resposta: Em contratações fora da agência (ex.: canais remotos), pode haver direito de arrependimento em 7 dias; avaliamos a elegibilidade e protocolamos a solicitação.
+
+---
+Pergunta: Pago só o mínimo da fatura; o que fazer?
+Resposta: Evite o rotativo; simule parcelamento de fatura, portabilidade ou consolidar com outro crédito mais barato; buscamos a menor taxa possível.
+
+---
+Pergunta: Vale a pena parcelar a fatura?
+Resposta: Geralmente é melhor que o rotativo, mas compare o CET; às vezes portabilidade ou renegociação direta traz custo menor.
+
+---
+Pergunta: Como reduzir a dívida do cartão rapidamente?
+Resposta: Interromper o rotativo, buscar desconto para pagamento à vista ou migrar para crédito com garantia e CET inferior; depois, ajuste o limite para evitar recaídas.
+
+---
+Pergunta: Cheque especial: devo usar?
+Resposta: Use apenas em emergência e por pouco tempo; é um crédito caro e pode virar ciclo de endividamento; prefira linhas mais baratas.
+
+---
+Pergunta: Posso contestar compras não reconhecidas?
+Resposta: Sim; comunique imediatamente a administradora, registre BO se for fraude e acompanhe o processo de chargeback; enquanto isso, avaliamos suspensão de cobranças.
+
+---
+Pergunta: Posso transferir dívida de cartão para outro banco?
+Resposta: Sim, via portabilidade ou empréstimo substitutivo; analisamos CET final, IOF e impacto no score.
+
+---
+Pergunta: Cartão adicional: quem responde pela dívida?
+Resposta: O titular do cartão responde por todas as transações dos adicionais; convém ajustes de limites e bloqueio preventivo se necessário.
+
+---
+Pergunta: A administradora pode alterar juros sem meu consentimento?
+Resposta: Alterações relevantes devem ser informadas previamente; cláusulas abusivas podem ser questionadas.
+
+---
+Pergunta: Como negociar com fintechs (Nubank, Inter, C6, etc.)?
+Resposta: As vias são semelhantes às dos bancos tradicionais; avaliamos propostas no app e opções externas para garantir o melhor CET.
+
+---
+Pergunta: Como evitar voltar a se endividar no cartão?
+Resposta: Defina limite coerente com renda, use débito automático da fatura, monitore gastos em tempo real e planeje reservas para emergências.
+
+---
+Pergunta: O que diferencia empréstimo pessoal do consignado?
+Resposta: No consignado, o desconto é automático em folha/benefício, o que reduz risco e juros; no pessoal, as taxas tendem a ser maiores.
+
+---
+Pergunta: Posso renegociar consignado?
+Resposta: Sim, por repactuação, redução de taxa, pausa ou portabilidade; analisamos margem, CET e seguros embutidos.
+
+---
+Pergunta: O banco pode manter consignado se não recebo mais pela mesma fonte?
+Resposta: Em regra, a fonte pagadora é essencial; mudanças exigem ajuste formal; verificamos alternativas de regularização.
+
+---
+Pergunta: Vale a pena trocar vários consignados por um só?
+Resposta: Pode valer se a nova taxa e CET forem menores e o prazo adequado; fazemos simulação completa antes de decidir.
+
+---
+Pergunta: O que é reserva de margem consignável (RMC) do cartão consignado?
+Resposta: É a parte da margem que garante pagamento mínimo do cartão consignado; exige atenção para não virar dívida cara sem perceber.
+
+---
+Pergunta: Sofri venda casada de seguro/serviço no consignado; e agora?
+Resposta: Documentamos a prática, pedimos cancelamento e estorno; se negarem, formalizamos reclamações e avaliamos ação judicial.
+
+---
+Pergunta: Tenho consignado e fiquei superendividado; há saída?
+Resposta: Sim; combinamos negociação com credores, reestruturação do orçamento e, quando couber, medidas de prevenção ao superendividamento.
+
+---
+Pergunta: Portabilidade do consignado sempre compensa?
+Resposta: Só quando CET total diminui de forma comprovada; analisamos taxas, prazo, IOF e custos de transferência.
+
+---
+Pergunta: Aposentados e servidores têm regras específicas?
+Resposta: Sim, há limites de margem e diretrizes de oferta; verificamos se o contrato respeitou prazos, carências e transparência.
+
+---
+Pergunta: Posso suspender temporariamente parcelas?
+Resposta: Em alguns casos, bancos oferecem pausa; avaliamos impacto de juros e custo extra antes de aderir.
+
+---
+Pergunta: Atraso no financiamento do carro: posso perder o veículo?
+Resposta: Sim, o bem é garantia; antes, é possível negociar, repactuar ou vender com quitação; o ideal é agir ainda nas primeiras parcelas em atraso.
+
+---
+Pergunta: Como reduzir parcela do financiamento de veículo?
+Resposta: Estendendo prazo, renegociando taxa, portando o crédito ou amortizando com entrada extra; simulamos cenários e o CET final.
+
+---
+Pergunta: Financiamento imobiliário: quando pedir portabilidade?
+Resposta: Quando a taxa/seguro do novo banco reduzir o CET e o custo de mudança for compensado no prazo restante.
+
+---
+Pergunta: Amortizar com redução de prazo ou de parcela?
+Resposta: Reduzir prazo costuma gerar maior economia total de juros; reduzir parcela melhora fôlego mensal; escolhemos com base no seu objetivo.
+
+---
+Pergunta: O banco pode recusar amortização extraordinária?
+Resposta: Não; a amortização é um direito previsto nos contratos de financiamento, observadas as condições pactuadas.
+
+---
+Pergunta: O que é alienação fiduciária?
+Resposta: É quando o bem fica em garantia do banco até quitação; em inadimplência, pode haver retomada após ritos legais.
+
+---
+Pergunta: Posso vender um imóvel/veículo ainda financiado?
+Resposta: Sim, com anuência do credor e quitação ou transferência do saldo; cuidamos do trâmite para evitar riscos.
+
+---
+Pergunta: Seguro embutido em financiamento é obrigatório?
+Resposta: Em imóvel, MIP/DFI costumam ser exigidos; em veículo, há seguros facultativos que, se vendidos de forma atrelada, podem ser questionados.
+
+---
+Pergunta: Vale trocar financiamento caro por home equity?
+Resposta: Em alguns casos, usar imóvel como garantia reduz CET; porém, o risco é maior; a decisão deve ser criteriosa.
+
+---
+Pergunta: Perdi renda e não consigo pagar o financiamento; e agora?
+Resposta: Avaliamos pausa, alongamento, portabilidade e alternativas de venda ou locação; priorizamos solução que preserve patrimônio.
+
+---
+Pergunta: Estar negativado impede negociação?
+Resposta: Não; muitos credores preferem acordos que limparem seu nome rapidamente, sobretudo com entrada ou quitação.
+
+---
+Pergunta: Em quanto tempo o nome fica limpo após acordo?
+Resposta: Normalmente até 5 dias úteis depois da quitação ou da primeira parcela, conforme o acordo assinado.
+
+---
+Pergunta: Score cai por causa de acordo?
+Resposta: O score reflete histórico; pagar e manter adimplência tende a melhorar gradualmente; evitamos novas consultas e atrasos.
+
+---
+Pergunta: Posso ter crédito mesmo negativado?
+Resposta: Existem linhas com garantia (consignado, com garantia real) e cartões específicos; mas é essencial não piorar a alavancagem.
+
+---
+Pergunta: A dívida sai do Serasa em 5 anos?
+Resposta: O apontamento caduca em cerca de 5 anos; porém, o débito pode continuar existindo e sendo cobrado extrajudicialmente.
+
+---
+Pergunta: Posso pedir retirada de negativação indevida?
+Resposta: Sim; solicitamos prova do débito e, se indevido, retiramos e pedimos reparação.
+
+---
+Pergunta: É seguro aceitar “desconto alto demais”?
+Resposta: Descontos agressivos podem ser legítimos em recuperação; validamos origem, contrato e quitação oficial para sua segurança.
+
+---
+Pergunta: Pagar à vista sempre é melhor?
+Resposta: Se o desconto compensa e não compromete sua reserva essencial, sim; caso contrário, estruturamos parcelamento sustentável.
+
+---
+Pergunta: Como evito cair em golpes de “limpa nome”?
+Resposta: Desconfie de promessas de “nome limpo sem pagar” e pagamentos por fora; só negociamos em canais oficiais e com termo de quitação.
+
+---
+Pergunta: Como melhorar meu score após quitar dívidas?
+Resposta: Mantenha contas em dia, use crédito com responsabilidade, atualize dados cadastrais e evite consultas excessivas.
+
+---
+Pergunta: O que levo para uma negociação eficaz?
+Resposta: Extratos atualizados, renda comprovada, proposta clara e prazos realistas; isso aumenta a chance de desconto e condições melhores.
+
+---
+Pergunta: Quando é melhor propor pagamento à vista?
+Resposta: Quando há caixa disponível sem comprometer despesas básicas; o desconto costuma ser maior em dívidas vencidas.
+
+---
+Pergunta: Vale agrupar dívidas antes de negociar?
+Resposta: Sim, para enxergar o impacto no orçamento e priorizar as mais caras no CET; definimos uma estratégia por ordem de custo.
+
+---
+Pergunta: Como definir parcela ideal?
+Resposta: Usamos uma regra de segurança: parcela total de dívidas não deve ultrapassar uma fração da renda líquida, preservando custos essenciais.
+
+---
+Pergunta: É possível tirar multas e parte dos juros?
+Resposta: Em muitos acordos, sim; depende do tipo de crédito, tempo de atraso e políticas do credor.
+
+---
+Pergunta: Posso pedir quitação antecipada com desconto?
+Resposta: Sim; calculamos valor presente do saldo e negociamos abatimento de juros futuros.
+
+---
+Pergunta: Vale contratar assessoria para negociar?
+Resposta: Sim, especialmente com múltiplos credores, contestação de juros ou risco de execução; nossa atuação é focada em resultado e transparência.
+
+---
+Pergunta: O que é proposta “factível”?
+Resposta: É uma proposta que cabe no seu orçamento por todo o prazo; evita novo default e sustenta sua recuperação financeira.
+
+---
+Pergunta: Negociar direto no app do banco é suficiente?
+Resposta: Pode ser, mas comparamos com propostas externas e revisamos CET e letras miúdas; assim, você não aceita algo pior por conveniência.
+
+---
+Pergunta: E se o banco recusar minha proposta?
+Resposta: Reiteramos com contrapartidas (entrada, garantias), acionamos canais de defesa do consumidor e buscamos alternativas como portabilidade.
+
+---
+Pergunta: Quando vale ajuizar ação?
+Resposta: Quando há indícios de abusos, negativações indevidas ou falha de transparência, e a via negocial se esgotou; antes, mapeamos riscos e prazos.
+
+---
+Pergunta: Quanto tempo demora?
+Resposta: Varia por comarca e complexidade; por isso priorizamos acordo, que costuma ser mais rápido e previsível.
+
+---
+Pergunta: O juiz pode reduzir juros?
+Resposta: Em certas hipóteses de abusividade demonstrada; porém, prova técnica é crucial; produzimos cálculos e documentação.
+
+---
+Pergunta: Preciso parar de pagar para entrar com ação?
+Resposta: Não; interromper pagamento pode piorar; decidimos juntos a melhor tática conforme risco, garantias e caixa.
+
+---
+Pergunta: Mediação e conciliação funcionam?
+Resposta: Sim; câmaras e mutirões aceleram acordos, com segurança jurídica; costumam resultar em descontos relevantes.
+
+---
+Pergunta: Posso pedir liminar para retirar negativação?
+Resposta: Em casos de indícios robustos de indevido; o juiz pode determinar retirada provisória até julgamento.
+
+---
+Pergunta: Se já assinei acordo ruim, posso rever?
+Resposta: Pode haver revisão quando há vício ou abusividade; avaliamos caso a caso com base documental.
+
+---
+Pergunta: Como ficam custas e honorários?
+Resposta: Esclarecemos antes de qualquer medida; preferimos modelos com previsibilidade e alinhamento ao resultado.
+
+---
+Pergunta: Preciso de perito para revisar juros?
+Resposta: Em disputas técnicas, o perito pode ser decisivo; apresentamos memória de cálculo própria e acompanhamos perícia.
+
+---
+Pergunta: É possível homologar acordo em juízo?
+Resposta: Sim; isso dá força de título executivo e segurança para ambas as partes.
+
+---
+Pergunta: Fui vítima de fraude com empréstimo/consignado.
+Resposta: Suspender cobranças, abrir contestação formal, registrar BO, preservar provas e solicitar perícia de assinatura/biometria; atuamos em todas as frentes.
+
+---
+Pergunta: Tenho dívida antiga que não reconheço.
+Resposta: Exigimos comprovação de origem, contrato e cessões; sem prova, pedimos retirada de apontamentos e arquivamento.
+
+---
+Pergunta: Meu contrato foi cedido a outra empresa de cobrança.
+Resposta: É comum; exigimos documentos da cessão, saldos e CET; só negociamos com quem comprovar legitimidade.
+
+---
+Pergunta: Tenho dívidas em mais de 5 instituições.
+Resposta: Estruturamos um Plano de Reequilíbrio: ordem por CET, propostas faseadas e metas de curto e longo prazo.
+
+---
+Pergunta: Sou MEI/Autônomo: muda algo?
+Resposta: Rendimentos variáveis pedem acordos com folga e prazos flexíveis; combinamos reserva de emergência antes de fechar.
+
+---
+Pergunta: Estou desempregado(a).
+Resposta: Priorize sobrevivência, negocie pausa/alongamento, busque desconto à vista com recursos extraordinários e evite novos créditos.
+
+---
+Pergunta: Sou idoso(a) com consignado alto.
+Resposta: Avaliamos portabilidade, revisão de seguros, limitação de ofertas não solicitadas e prevenção a assédio comercial.
+
+---
+Pergunta: Perdi o veículo financiado.
+Resposta: Verificamos venda em leilão, abatimentos e saldo residual; negociamos condições para encerrar a dívida com segurança.
+
+---
+Pergunta: Tenho limite estourado em múltiplos cartões.
+Resposta: Interrompemos o rotativo, consolidamos débitos caros e ajustamos limites; estabelecemos regras de uso para não recair.
+
+---
+Pergunta: Recebi proposta “imperdível” por WhatsApp.
+Resposta: Só avance com validação de origem, canais oficiais e contrato; não pague boletos de terceiros sem checagem.
+
+---
+Pergunta: Qual a parcela máxima saudável?
+Resposta: Como regra prática, todas as dívidas somadas não devem comprometer a verba essencial nem ultrapassar uma fração conservadora da renda líquida.
+
+---
+Pergunta: Reserva de emergência ajuda mesmo?
+Resposta: Sim; reduz dependência de crédito caro em imprevistos e protege acordos em andamento.
+
+---
+Pergunta: Como organizar pagamentos?
+Resposta: Centralize vencimentos próximos a recebimentos, use débito automático apenas quando houver saldo e mantenha calendário de controle.
+
+---
+Pergunta: Devo encerrar cartões?
+Resposta: Reduzir quantidade e limites ajuda na disciplina; mantenha 1 a 2 cartões bem geridos com limites coerentes.
+
+---
+Pergunta: Vale usar crédito com garantia?
+Resposta: Pode reduzir CET, mas aumenta risco sobre o bem; decisão deve ser prudente e proporcional ao problema.
+
+---
+Pergunta: Como evitar vender “o almoço para pagar o jantar”?
+Resposta: Estruturamos metas de recomposição, foco nas dívidas mais caras e revisão de gastos fixos; monitoramento nos primeiros 90 dias é crucial.
+
+---
+Pergunta: Educação financeira é necessária?
+Resposta: Pequenos hábitos (controle semanal, metas, envelopes) evitam retorno ao ciclo do endividamento.
+
+---
+Pergunta: Posso renegociar de novo no futuro?
+Resposta: Sim, mas o ideal é resolver na primeira rodada com condições sustentáveis; reabrir negociação com histórico positivo é mais fácil.
+
+---
+Pergunta: Como medir se o acordo foi bom?
+Resposta: Compare CET antes/depois, economia total, prazo e aderência ao seu orçamento; um bom acordo é o que você consegue cumprir.
+
+---
+Pergunta: O que vocês fazem por mim, na prática?
+Resposta: Diagnóstico completo, coleta de documentos, simulações, contestação técnica de juros/encargos, negociação multibancos, análise de portabilidade, acordo formal com segurança e acompanhamento até limpar seu nome.

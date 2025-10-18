@@ -1,9 +1,11 @@
 agno
 openai
-faiss-cpu
 python-dotenv
 uvicorn
 fastapi
 pydantic
 requests
-sentence-transformers
+lancedb
+pandas
+chonkie[openai]
+tiktoken
