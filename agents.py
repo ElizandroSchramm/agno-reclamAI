@@ -14,14 +14,13 @@ import os
 from agno.team.team import Team
 from dotenv import load_dotenv
 from agno_knowledge import inicializar_agno_knowledge, sistema_knowledge
-from base_historico import inicializar_base_historico, base_historico
 
 # Carregar variáveis de ambiente
 load_dotenv()
 
 # Inicializar sistemas
 inicializar_agno_knowledge()
-inicializar_base_historico()
+# inicializar_base_historico()
 
 # Configurar banco de dados SQLite para memória e histórico
 db = SqliteDb(db_file="agno_memory.db")
@@ -180,6 +179,8 @@ def criar_aplicacao_agno():
         id="reclamai_team",
         name="ReclamAI Team",
         members=[agente_triagem, agente_especialista],
+        db=db,
+        enable_user_memories=True,
         model=OpenAIChat(id="gpt-4o", api_key=os.getenv("OPENAI_API_KEY")),
         description="Team that helps users negotiate debts by coordinating two agents: TRIAGEM collects case details, and ESPECIALISTA creates the negotiation plan and message.",
         instructions=[
