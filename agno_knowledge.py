@@ -1,4 +1,6 @@
 import os
+import asyncio
+import nest_asyncio
 from agno.knowledge.knowledge import Knowledge
 from agno.vectordb.lancedb import LanceDb
 from agno.knowledge.embedder.openai import OpenAIEmbedder
@@ -7,6 +9,9 @@ from agno.knowledge.reader.text_reader import TextReader
 from dotenv import load_dotenv
 
 load_dotenv()
+
+# Permitir loops aninhados
+nest_asyncio.apply()
 
 class SistemaKnowledgeAgnos:
     def __init__(self):
@@ -43,8 +48,29 @@ class SistemaKnowledgeAgnos:
         print(f"Arquivo: {arquivo_faq}")
         
         try:
-            # Adicionar conteúdo com chunking fixo
-            self.knowledge.add_content(
+            # Verificar se já existe um loop de eventos rodando
+            try:
+                loop = asyncio.get_running_loop()
+                # Se chegou aqui, já existe um loop rodando
+                # Usar create_task para executar de forma assíncrona
+                task = loop.create_task(self._adicionar_faq_async(arquivo_faq))
+                # Aguardar o resultado da task
+                return loop.run_until_complete(task)
+            except RuntimeError:
+                # Não há loop rodando, pode usar asyncio.run()
+                return asyncio.run(self._adicionar_faq_async(arquivo_faq))
+            
+        except Exception as e:
+            print(f"❌ Erro ao adicionar FAQ: {e}")
+            return False
+    
+    async def _adicionar_faq_async(self, arquivo_faq):
+        """
+        Versão assíncrona do método de adicionar FAQ
+        """
+        try:
+            # Adicionar conteúdo com chunking fixo usando método assíncrono
+            await self.knowledge.add_content_async(
                 path=arquivo_faq,
                 reader=TextReader(
                     chunking_strategy=FixedSizeChunking(

@@ -181,7 +181,23 @@ def criar_aplicacao_agno():
         name="ReclamAI Team",
         members=[agente_triagem, agente_especialista],
         model=OpenAIChat(id="gpt-4o", api_key=os.getenv("OPENAI_API_KEY")),
-        instructions="Coordinate with team members to provide comprehensive information. Delegate tasks based on the user's request. Use the appropriate agent for the task."
+        description="Team that helps users negotiate debts by coordinating two agents: TRIAGEM collects case details, and ESPECIALISTA creates the negotiation plan and message.",
+        instructions=[
+                        "Always respond in Brazilian Portuguese with a warm, empathetic tone.",
+                        "Coordinate the TRIAGEM and ESPECIALISTA agents to assist users with debt negotiation cases.",
+                        "When TRIAGEM returns JSON, never expose raw JSON. Extract `ui.perguntao` and, if helpful, the top 1-3 `faltantes` items to guide the user.",
+                        "Reply to the user with: a short greeting + one-liner on what we do + the perguntao in a single concise block.",
+                        "If the user greets or sends an unstructured message (e.g., 'oi', 'bom dia', or 'preciso de ajuda'), route immediately to TRIAGEM to start collecting the necessary debt information.",
+                        "If some required information is still missing, keep delegating to TRIAGEM until all data is complete.",
+                        "Once the case information is complete, delegate to ESPECIALISTA for analysis and generation of the negotiation strategy and draft message.",
+                        "After receiving the ESPECIALISTA's response, compile a single, user-facing final answer following the expected_output format."],
+        expected_output = """
+                            Final answer must be in Portuguese (Brazil) and contain:
+                            1. A brief summary (máx. 3 bullets) of the situation and next steps.
+                            2. A structured plan or message the user can send to the creditor.
+                            3. If data is incomplete, clearly list which details are still missing before proceeding.
+                            Tone: empático, claro e orientado à ação. Sem linguagem jurídica formal.
+                            """
     )
     
     # Criar AgentOS que automaticamente expõe os endpoints
