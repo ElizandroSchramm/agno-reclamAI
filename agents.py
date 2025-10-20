@@ -9,6 +9,7 @@ que automaticamente cria os endpoints FastAPI.
 from agno.agent import Agent
 from agno.os import AgentOS
 from agno.models.openai import OpenAIChat
+from agno.db.sqlite import SqliteDb
 import os
 from agno.team.team import Team
 from dotenv import load_dotenv
@@ -21,6 +22,9 @@ load_dotenv()
 # Inicializar sistemas
 inicializar_agno_knowledge()
 inicializar_base_historico()
+
+# Configurar banco de dados SQLite para memória e histórico
+db = SqliteDb(db_file="agno_memory.db")
 
 def criar_agente_triagem():
     """
@@ -72,8 +76,10 @@ def criar_agente_triagem():
     agente = Agent(
         name="Triagem",
         instructions=instrucoes,
+        db=db,  # 🎯 Banco de dados 
         add_history_to_context=True,
         num_history_runs=10,
+        enable_user_memories=True,  # 🎯 Memória automática habilitada
         add_datetime_to_context=True,
         markdown=True,
     )
@@ -149,11 +155,15 @@ def criar_agente_especialista():
     agente = Agent(
         name="Especialista",
         instructions=instrucoes,
+        db=db,  # 🎯 Banco de dados para memória e histórico
         knowledge=sistema_knowledge.knowledge,  # 🎯 Agno Knowledge nativo!
         search_knowledge=True,  # 🎯 Busca automática!
         knowledge_filters={"type": "faq", "category": "renegociacao"},  # 🎯 Filtros!
+        add_history_to_context=True,
+        num_history_runs=10,  # 🎯 Últimas 10 interações
         add_datetime_to_context=True,
-        markdown=True,
+        enable_user_memories=True,  # 🎯 Memória automática habilitada
+        markdown=False,
     )
     
     return agente

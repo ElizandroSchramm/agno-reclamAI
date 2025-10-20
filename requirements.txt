@@ -9,3 +9,4 @@ lancedb
 pandas
 chonkie[openai]
 tiktoken
+sqlalchemy
