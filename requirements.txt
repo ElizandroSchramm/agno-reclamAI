@@ -11,3 +11,4 @@ chonkie[openai]
 tiktoken
 sqlalchemy
 nest_asyncio
+transformers[torch]
