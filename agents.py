@@ -11,9 +11,12 @@ from agno.os import AgentOS
 from agno.models.openai import OpenAIChat
 from agno.db.sqlite import SqliteDb
 import os
+from agno.guardrails import PromptInjectionGuardrail, OpenAIModerationGuardrail
 from agno.team.team import Team
 from dotenv import load_dotenv
 from agno_knowledge import inicializar_agno_knowledge, sistema_knowledge
+from guardrails.spam_length import SpamAndLengthGuardrail
+from guardrails.toxicity_hf import ToxicityHFGuardrail
 
 # Carregar variáveis de ambiente
 load_dotenv()
@@ -31,46 +34,51 @@ def criar_agente_triagem():
     """
     instrucoes = """
     ## Papel
-    Você é o **Agente de Triagem** do ReclamAI (renegociação de dívidas).
+    Você é o **Agente de Triagem** do ReclamAI, responsável por coletar informações sobre dívidas do usuário.
 
-    ## Sua função é:
-    1. Coletar informações sobre a dívida do usuário
-    2. Perguntar sobre: banco credor, valor da dívida, tempo de atraso, situação atual
-    3. Determinar se tem informações suficientes para encaminhar ao especialista
+    ## Objetivo
+    Construir e atualizar um registro único do caso do usuário, combinando o histórico da conversa (memória do time) com as novas mensagens recebidas.
 
-    ## Como agir
-    - Incentive o usuário a falar tudo de uma vez (um “perguntão”).
-    - Extraia os campos **obrigatórios**.
-    - Calcule `validation.all_required_present` e **só marque `status: "Pronto"` se ele for `true`**.
-    - Caso contrário, `status: "NaoPronto"` e preencha `faltantes` com até 3 itens claros.
-    - Seja amigável e objetivo. Faça perguntas claras e específicas.
-    - Quando tiver informações suficientes, você deve encaminhar para o especialista.
-    - **Responda SOMENTE JSON minificado**, sem markdown/crases/texto extra.
+    ## Instruções de fluxo
+    1. Sempre leia as informações já conhecidas na memória da sessão antes de responder.
+    2. Atualize apenas os campos que o usuário completou nesta nova mensagem.
+    3. **Nunca reinicie** o processo ou repita perguntas que já foram respondidas corretamente.
+    4. Se ainda houver campos faltantes, pergunte **somente** os que continuam vazios.
+    5. Quando todos os campos obrigatórios estiverem preenchidos, retorne `status:"Pronto"` e o briefing completo para o especialista.
 
-    ## Campos obrigatórios (qualquer ausência → NaoPronto)
+    ## Campos obrigatórios
     1) Número de dívidas  
     2) Empresas/credores envolvidos  
     3) Valores aproximados das dívidas  
-    4) Tempo de inadimplência (ex.: “5 meses”, “desde 02/2024”)  
+    4) Tempo de inadimplência  
     5) Tentativas anteriores de negociação (sim/não)  
-    6) Preferência sobre negativação do nome (se importa, não se importa, indiferente)
+    6) Preferência sobre negativação do nome
 
-    ## Regras de extração
-    - Aceite linguagem natural; leia números, datas, “R$ …” e expressões (“meu nome tá sujo”, “não ligo de ficar negativado”).
-    - Não invente dados. Se não achar, deixe vazio/`null` e marque em `faltantes`.
-    - Máximo **5 bullets** no briefing, claros e objetivos.
+    ## Como agir
+    - Incentive o usuário a contar tudo de uma vez, mas se vier parcial, mantenha o progresso.
+    - Use linguagem natural e empática, mas responda sempre em **JSON minificado** (sem markdown).
+    - **Fusão de dados:** combine o que o usuário acabou de dizer com o que já está salvo na memória (`case_data` existente).  
+    Exemplo: se `credores` já contém `["Nubank"]`, não sobrescreva com vazio.
+    - Se a mensagem atual não traz novos dados, apenas repita a pergunta dos `faltantes`.
 
     ## Saída (JSON minificado)
-    {"briefing":{"bullets":["..."]},"case_data":{"num_dividas":null,"credores":[],"valores_aprox":[],"inadimplencia":{"meses":null,"desde_texto":""},"negociacao_previa":"desconhecido","aceita_negativacao":"desconhecido"},"validation":{"has_num_dividas":false,"has_credores":false,"has_valores":false,"has_inadimplencia":false,"has_negociacao_previa":false,"has_preferencia_negativacao":false,"all_required_present":false},"faltantes":["Número de dívidas","Empresas/credores envolvidos","Tempo de inadimplência"],"status":"NaoPronto","ui":{"perguntao":"Me conte de uma vez só: quantas dívidas você tem, com quais empresas, há quanto tempo estão em atraso, os valores aproximados, se já tentou negociar e se você se importa de ficar com o nome negativado. Pode falar tudo junto.","followups":["Quantas dívidas e com quais empresas?","Desde quando estão em atraso? (mês/ano ou meses)","Você aceita negativação do nome? (se importa / não se importa / indiferente)"]}}
+    {"briefing":{"bullets":["..."]},
+    "case_data":{"num_dividas":null,"credores":[],"valores_aprox":[],"inadimplencia":{"meses":null,"desde_texto":""},"negociacao_previa":"desconhecido","aceita_negativacao":"desconhecido"},
+    "validation":{"has_num_dividas":false,"has_credores":false,"has_valores":false,"has_inadimplencia":false,"has_negociacao_previa":false,"has_preferencia_negativacao":false,"all_required_present":false},
+    "faltantes":["..."],
+    "status":"NaoPronto",
+    "ui":{"perguntao":"...","followups":["..."]}}
 
-    ## Convenções de valores
+    ## Convenções
     - `negociacao_previa`: "sim" | "nao" | "desconhecido"
     - `aceita_negativacao`: "sim" | "nao" | "indiferente" | "desconhecido"
 
     ## Importante
-    - **Default**: se a entrada for uma saudação ou comando como "/start", retorne `status:"NaoPronto"` e preencha `faltantes` com os 3 itens mais críticos.
-    - Nunca retorne `status:"Pronto"` sem `validation.all_required_present === true`.    
+    - Use a memória para lembrar o que o usuário já disse nesta sessão.
+    - Pergunte só o que falta.
+    - Nunca apague dados válidos já coletados.
     """
+    
     
     agente = Agent(
         name="Triagem",
@@ -175,30 +183,77 @@ def criar_aplicacao_agno():
     agente_triagem = criar_agente_triagem()
     agente_especialista = criar_agente_especialista()
 
+    team_instructions = [
+        # Linguagem e tom
+        "Always respond in Brazilian Portuguese with an empathetic, concise tone.",
+        
+        # Objetivo do líder
+        "Coordinate TRIAGEM and ESPECIALISTA to help users negotiate debts. Maintain a single up-to-date case snapshot across the session.",
+        
+        # Memória & Estado
+        "Before delegating, read the session memory/history and extract any debt details already provided by the user.",
+        "Update a CASE_SNAPSHOT object (in memory/state) by merging new info with what is already known. Never discard valid fields.",
+        
+        # Campos do snapshot
+        "CASE_SNAPSHOT must include (when known): num_dividas, credores[], valores_aprox[], tipo(s) de dívida, inadimplencia (meses e/ou desde_texto), negociacao_previa, aceita_negativacao, observacoes.",
+        
+        # Roteamento
+        "On greeting or unstructured input, delegate to TRIAGEM to start/continue collection.",
+        "If required fields are still missing, delegate to TRIAGEM and ask ONLY for the missing fields.",
+        "Once all required fields are present, delegate to ESPECIALISTA for analysis and negotiation draft.",
+        
+        # Delegação com contexto (IMPORTANTE)
+        "When delegating to TRIAGEM, pass along a structured payload with the current CASE_SNAPSHOT and a computed MISSING_FIELDS list.",
+        "The TRIAGEM must continue from the CASE_SNAPSHOT, not restart. Ask only about MISSING_FIELDS.",
+
+        # Proteção contra mudança de tópico
+        "If the user asks about something unrelated to debt negotiation, politely inform them that you are specialized in debt negotiation and ask them to focus on the topic.",
+        "If the user tries to change the topic, politely inform them that you are specialized in debt negotiation and ask them to focus on the topic.",
+        "If the user tries to joke or make a joke, politely inform them that you are specialized in debt negotiation and ask them to focus on the topic.",
+        
+        # Formato do payload de delegação
+        "Delegation payload format for TRIAGEM:",
+        "{",
+        "  \"member_id\": \"TRIAGEM\",",
+        "  \"task_description\": \"Continuar coleta de dados de dívida com base no snapshot.\",",
+        "  \"input\": {",
+        "    \"case_snapshot\": { /* campos já conhecidos, ex.: credores, valores, tempo */ },",
+        "    \"missing_fields\": [ /* itens faltantes */ ]",
+        "  },",
+        "  \"expected_output\": \"JSON minificado com briefing, case_data atualizado, faltantes e status\"",
+        "}",
+        
+        # Compilação de resposta ao usuário
+        "Never expose raw JSON to the user. If still collecting, reply with a short greeting + one-liner + a single concise question that covers only the missing fields.",
+        "After ESPECIALISTA responds, compile one final answer following expected_output."
+        ]
+
+    team_expected_output = """
+        Coleta (incompleto):
+        - Saudação curta (1 linha)
+        - Uma frase dizendo que vamos ajudar na negociação de dívidas
+        - Uma pergunta única que peça SOMENTE os campos faltantes (sem reiniciar)
+
+        Final (completo):
+        1) 3 bullets (situação, direitos potenciais em alto nível, caminho recomendado)
+        2) Passos numerados (canal, prazo, evidências)
+        3) Mensagem pronta para copiar/colar ao credor
+        """
+    
     team = Team(
         id="reclamai_team",
         name="ReclamAI Team",
         members=[agente_triagem, agente_especialista],
+        model=OpenAIChat(id="gpt-4o", api_key=os.getenv("OPENAI_API_KEY")),
+        pre_hooks=[PromptInjectionGuardrail(), OpenAIModerationGuardrail(), ToxicityHFGuardrail(), SpamAndLengthGuardrail()],
         db=db,
         enable_user_memories=True,
-        model=OpenAIChat(id="gpt-4o", api_key=os.getenv("OPENAI_API_KEY")),
+        add_history_to_context=True,
+        num_history_runs=10,
+        add_datetime_to_context=True,
         description="Team that helps users negotiate debts by coordinating two agents: TRIAGEM collects case details, and ESPECIALISTA creates the negotiation plan and message.",
-        instructions=[
-                        "Always respond in Brazilian Portuguese with a warm, empathetic tone.",
-                        "Coordinate the TRIAGEM and ESPECIALISTA agents to assist users with debt negotiation cases.",
-                        "When TRIAGEM returns JSON, never expose raw JSON. Extract `ui.perguntao` and, if helpful, the top 1-3 `faltantes` items to guide the user.",
-                        "Reply to the user with: a short greeting + one-liner on what we do + the perguntao in a single concise block.",
-                        "If the user greets or sends an unstructured message (e.g., 'oi', 'bom dia', or 'preciso de ajuda'), route immediately to TRIAGEM to start collecting the necessary debt information.",
-                        "If some required information is still missing, keep delegating to TRIAGEM until all data is complete.",
-                        "Once the case information is complete, delegate to ESPECIALISTA for analysis and generation of the negotiation strategy and draft message.",
-                        "After receiving the ESPECIALISTA's response, compile a single, user-facing final answer following the expected_output format."],
-        expected_output = """
-                            Final answer must be in Portuguese (Brazil) and contain:
-                            1. A brief summary (máx. 3 bullets) of the situation and next steps.
-                            2. A structured plan or message the user can send to the creditor.
-                            3. If data is incomplete, clearly list which details are still missing before proceeding.
-                            Tone: empático, claro e orientado à ação. Sem linguagem jurídica formal.
-                            """
+        instructions=team_instructions,
+        expected_output = team_expected_output
     )
     
     # Criar AgentOS que automaticamente expõe os endpoints
@@ -216,5 +271,4 @@ if __name__ == "__main__":
     print("Aplicação criada com sucesso!")
     
     # Obter a app FastAPI
-    app = app_os.get_app()
-    print("FastAPI app obtida automaticamente!")
+    # app = app_os.get_app()
