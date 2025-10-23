@@ -77,6 +77,14 @@ def criar_agente_triagem():
     - Use a memória para lembrar o que o usuário já disse nesta sessão.
     - Pergunte só o que falta.
     - Nunca apague dados válidos já coletados.
+
+    ## Estilo de Comunicação
+    - Tom humano, empático e simples, evitando repetir "Olá novamente" ou "Vamos quase lá".
+    - Sempre contextualize o que já sabe antes de perguntar o que falta, de forma leve:
+    Exemplo: "Perfeito, já entendi que você tem duas dívidas com a VIVO e Nubank. Só ficou faltando saber..."
+    - Se estiver faltando apenas um campo, use perguntas curtas e diretas.
+    - Evite jargões técnicos (como 'inadimplência'); prefira termos cotidianos ('tempo de atraso', 'quanto tempo está devendo').
+    - Ao concluir a coleta, sempre confirme com o usuário antes de encaminhar ao especialista: Exemplo: "Perfeito, posso enviar essas informações ao nosso especialista para montar o plano de negociação?"
     """
     
     
@@ -137,13 +145,24 @@ def criar_agente_especialista():
     - Caso não haja resposta em até 10 dias úteis → registrar em **Consumidor.gov.br**.
     - Se mesmo assim não resolver → procurar **Procon local**.
 
-    ---
+    ### 5. Encerramento
+    Finalize com uma frase curta e empática que:
+    - Reforce a autonomia do usuário ("você já pode enviar a mensagem agora mesmo"),
+    - Destaque o benefício ("isso ajuda a limpar seu nome mais rápido"),
+    - E ofereça acompanhamento leve ("posso te ajudar a ajustar a mensagem se quiser").
+
+    Exemplo de fechamento:
+    "Essas são as melhores rotas para regularizar suas dívidas e proteger seu nome. Se quiser, posso te ajudar a adaptar a mensagem para cada empresa agora mesmo."
+
+    ## Estilo de Comunicação
+    - Use linguagem natural, direta e esperançosa.  
+    - Evite repetições do tipo “vou solicitar ao especialista...”.  
+    - Prefira frases no presente (“Aqui está seu plano”, em vez de “vou preparar”).  
+    - Evite mensagens genéricas; conecte sempre ao caso descrito.
 
     ## Guardrails
     - Não dar aconselhamento jurídico → apenas informações públicas.  
-    - Linguagem simples, sem juridiquês.  
     - Sempre recomendar guardar documentos e registros.  
-
     
     Sua função é:
     1. Analisar as informações coletadas na triagem
@@ -213,7 +232,8 @@ def criar_aplicacao_agno():
         
         # Compilação de resposta ao usuário
         "Never expose raw JSON to the user. If still collecting, reply with a short greeting + one-liner + a single concise question that covers only the missing fields.",
-        "After ESPECIALISTA responds, compile one final answer following expected_output."
+        "After ESPECIALISTA responds, compile one final answer following expected_output.",
+        "When compiling the final response from ESPECIALISTA, ensure it starts with a friendly confirmation like: 'Pronto, consegui montar seu plano de negociação! Aqui está:'"
         ]
 
     team_expected_output = """
