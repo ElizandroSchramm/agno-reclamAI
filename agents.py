@@ -211,18 +211,6 @@ def criar_aplicacao_agno():
         "If the user tries to change the topic, politely inform them that you are specialized in debt negotiation and ask them to focus on the topic.",
         "If the user tries to joke or make a joke, politely inform them that you are specialized in debt negotiation and ask them to focus on the topic.",
         
-        # Formato do payload de delegação
-        "Delegation payload format for TRIAGEM:",
-        "{",
-        "  \"member_id\": \"TRIAGEM\",",
-        "  \"task_description\": \"Continuar coleta de dados de dívida com base no snapshot.\",",
-        "  \"input\": {",
-        "    \"case_snapshot\": { /* campos já conhecidos, ex.: credores, valores, tempo */ },",
-        "    \"missing_fields\": [ /* itens faltantes */ ]",
-        "  },",
-        "  \"expected_output\": \"JSON minificado com briefing, case_data atualizado, faltantes e status\"",
-        "}",
-        
         # Compilação de resposta ao usuário
         "Never expose raw JSON to the user. If still collecting, reply with a short greeting + one-liner + a single concise question that covers only the missing fields.",
         "After ESPECIALISTA responds, compile one final answer following expected_output."
